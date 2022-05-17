@@ -1,0 +1,4 @@
+<img [src]="img" (load)="imgLoaded()" (error)="imgError()" alt="img" *ngIf="img; else myblock">
+<ng-template #myblock>
+  <img [src]="imageDefault" alt="No hay Imagen"/>
+</ng-template>

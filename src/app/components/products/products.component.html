@@ -1,0 +1,10 @@
+<p>La cantidad es {{myshoppingCar.length}}</p>
+<p>El total es {{total | currency}}</p>
+<p>Today: {{today | date:'short'}}</p>
+<p>Otra Fecha: {{fecha | date:'YYYY...dd...MM'}}</p>
+<p>{{'Hola como estas?' | uppercase}}</p>
+<p>{{'Anita Lava la tina' | reverse}}</p>
+<p>{{ fecha|  timeAgo}}</p>
+<div class="products-grid">
+  <app-product (emitir)="escuchar($event)" [product]="product" *ngFor="let product of products"></app-product>
+</div>
