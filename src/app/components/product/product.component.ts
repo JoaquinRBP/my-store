@@ -8,19 +8,23 @@ import { Product } from '../../models/Product';
 export class ProductComponent implements OnInit {
 
   @Input() product:Product = {
-    id:'',
+    id:0,
     title:'',
     image: '',
     price: 0,
     description: '',
-    category: '',
+    category:'',
   }
   @Output() emitir = new EventEmitter<Product>();
+  @Output() showProduct = new EventEmitter<number>();
   constructor() { }
 
   ngOnInit(): void {
   }
   agregar(){
     this.emitir.emit(this.product);
+  }
+  verDetalle(){
+    this.showProduct.emit(this.product.id);
   }
 }

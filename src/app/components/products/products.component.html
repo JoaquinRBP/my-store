@@ -6,5 +6,29 @@
 <p>{{'Anita Lava la tina' | reverse}}</p>
 <p>{{ fecha|  timeAgo}}</p>
 <div class="products-grid">
-  <app-product (emitir)="escuchar($event)" [product]="product" *ngFor="let product of products"></app-product>
+  <app-product (showProduct)="escuchaProduct($event)" (emitir)="escuchar($event)" [product]="product" *ngFor="let product of products"></app-product>
+</div>
+<div class="products-detail" [class.active]="showProductDetail">
+  <div>
+    <button (click)="toggleProductDetail()" >Close</button>
+    <div class="swiper">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+        ...
+      </div>
+      <!-- If we need pagination -->
+      <div class="swiper-pagination"></div>
+
+      <!-- If we need navigation buttons -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+
+      <!-- If we need scrollbar -->
+      <div class="swiper-scrollbar"></div>
+    </div>
+  </div>
 </div>
